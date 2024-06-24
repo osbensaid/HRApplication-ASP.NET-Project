@@ -1,0 +1,29 @@
+﻿@model IEnumerable<Employee>
+@{
+    ViewData["Title"] = "All Employees";
+}
+
+<h2>All Employees</h2>
+<table class="table table-bordered table-striped table-hover">
+    <thead>
+         <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Department</th>
+            <th scope="col">Job</th>
+            <th scope="col">Birth Date</th>
+            <th scope="col">Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Employee emp in Model)
+        {     
+         <tr>
+            <td>@emp.EmployeeName</td>
+            <td>@emp.Department</td>
+            <td>@emp.JobTitle</td>
+            <td>@emp.BirthDay.ToShortDateString()</td>
+            <td>@emp.EmailAddress</td>
+        </tr>
+        }
+    </tbody>
+</table>
